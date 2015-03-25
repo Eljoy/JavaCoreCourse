@@ -3,9 +3,14 @@ package javacorecourse.task_18;
 /**
  * Created by Home on 13.03.2015.
  */
-import java.io.*;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.lang.reflect.Method;
-import java.net.*;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.TimeZone;
@@ -22,7 +27,7 @@ class SimpleWEBServerReflection extends Thread
         {
 
             ServerSocket server = new ServerSocket(8080);
-            System.out.println("server is started");
+            System.out.println("server has started");
 
             while(true)
             {

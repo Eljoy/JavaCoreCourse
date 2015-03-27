@@ -1,22 +1,40 @@
 package javacorecourse.task_19;
 
+
 /**
- * Created by Home on 3/24/2015.
- *//*
+ * Created by Home on 13.03.2015.
+ */
+
 import javacorecourse.task_18.CurrentTime;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.lang.reflect.Method;
-import java.net.*;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.TimeZone;
 
 class SimpleWEBServerAnnotation extends Thread
 {
-    private Socket socket;
-    private   BufferedReader in;
-    private  PrintWriter out;
+    private Socket s;
+    private   InputStream is;
+    private  OutputStream os;
+
+    protected void htmlFormsGenerator(RequestTypes requestType) throws Exception{
+        StringBuilder response = new StringBuilder();
+        response.append("HTTP/1.0 200 OK\n");
+        response.append("Content-Type: text/html\r\n");
+        response.append("\r\n");
+        response.append("<html><form method='"+requestType.toString()+"'>\n");
+        response.append("<input type='text' name='a'></br><input type='text' name='b'></br><input type='submit' ></form></html>");
+        os.write(response.toString().getBytes());
+        os.close();
+
+    }
 
     public static void main(String args[])
     {
@@ -24,7 +42,7 @@ class SimpleWEBServerAnnotation extends Thread
         {
 
             ServerSocket server = new ServerSocket(8080);
-            System.out.println("server is started");
+            System.out.println("server has started");
 
             while(true)
             {
@@ -35,9 +53,9 @@ class SimpleWEBServerAnnotation extends Thread
         {System.out.println("init error: " + e);}
     }
 
-    public SimpleWEBServerAnnotation(Socket socket)
+    public SimpleWEBServerAnnotation(Socket s)
     {
-        this.socket = socket;
+        this.s = s;
         setDaemon(true);
         setPriority(NORM_PRIORITY);
         start();
@@ -47,12 +65,11 @@ class SimpleWEBServerAnnotation extends Thread
     {
         try
         {
-            in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-
-            out = new PrintWriter(socket.getOutputStream());
+            is = s.getInputStream();
+            os = s.getOutputStream();
 
             byte buf[] = new byte[64*1024];
-            int r = in.read(buf);
+            int r = is.read(buf);
 
 
             String request = new String(buf, 0, r);
@@ -61,6 +78,7 @@ class SimpleWEBServerAnnotation extends Thread
 
             if(path == null)
             {
+                System.err.println("Path is null");
                 String response = "HTTP/1.1 400 Bad Request\n";
                 DateFormat df = DateFormat.getTimeInstance();
                 df.setTimeZone(TimeZone.getTimeZone("GMT"));
@@ -70,17 +88,18 @@ class SimpleWEBServerAnnotation extends Thread
                         + "Server: SimpleWEBServer\n"
                         + "Pragma: no-cache\n\n";
 
-                out.write(response);
-                socket.close();
+                os.write(response.getBytes());
+                s.close();
 
                 return;
             }
 
-            r = path.lastIndexOf(".");
-            if(path.substring(r + 1).equals("getpage")) {
-                showClassPage(path.substring(2, r));
+            if(path.contains(":")) {
+                if(path.substring(path.indexOf("\\") + 1, path.indexOf(":")).equals("class"));
+                showClassPage(path.substring(path.indexOf(":") + 1));
                 return;
             }
+
 
             File f = new File(path);
             boolean flag = !f.exists();
@@ -114,7 +133,7 @@ class SimpleWEBServerAnnotation extends Thread
                 response = response + "File " + path + " not found!";
 
                 os.write(response.getBytes());
-                socket.close();
+                s.close();
 
                 return;
             }
@@ -156,16 +175,16 @@ class SimpleWEBServerAnnotation extends Thread
                     + "Connection: close\n"
                     + "Server: SimpleWEBServer\n\n";
 
-            out.write(response);
+            os.write(response.getBytes());
             FileInputStream fis = new FileInputStream(path);
             r = 1;
             while(r > 0)
             {
                 r = fis.read(buf);
-                if(r > 0) out.write(buf, 0, r);
+                if(r > 0) os.write(buf, 0, r);
             }
             fis.close();
-            socket.close();
+            s.close();
         }
         catch(Exception e)
         {e.printStackTrace();}
@@ -208,18 +227,21 @@ class SimpleWEBServerAnnotation extends Thread
         return path;
     }
 
-    protected void showClassPage(String className) throws Exception {
+    protected void showClassPage(String invocPath) throws Exception {
 
-        String outMessage = null, response = null;
+        String outMessage = null, response = null, className, methodName;
         try {
+            className = invocPath.substring(0, invocPath.indexOf("."));
+            methodName = invocPath.substring(invocPath.indexOf(".") + 1);
+
             Class temp = Class.forName("javacorecourse.task_18." + className);
 
-            Method method = temp.getMethod("getPage");
+            Method method = temp.getMethod(methodName);
             outMessage = (String)method.invoke(new CurrentTime());
             response = "HTTP/1.1 200 OK\n";
         }
         catch (Exception e) {
-            outMessage = "Class" + className +" you are trying to load, does not exists";
+            outMessage = "Class: " + invocPath +" you are trying to load, does not exists";
             System.err.println("Some issues while method invocation has been occurred");
             response = "HTTP/1.1 404 Not Found\n";
         }
@@ -246,4 +268,6 @@ class SimpleWEBServerAnnotation extends Thread
         if(e < 0) e = str.length();
         return (str.substring(s, e)).trim();
     }
-} */
+
+
+}

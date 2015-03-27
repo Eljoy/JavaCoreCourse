@@ -4,6 +4,8 @@ package javacorecourse.task_18;
  * Created by Home on 13.03.2015.
  */
 
+import javacorecourse.task_19.RequestTypes;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -16,14 +18,25 @@ import java.util.Date;
 import java.util.TimeZone;
 
 class SimpleWEBServerReflection extends Thread
-{
-    private Socket s;
+{ private Socket s;
     private   InputStream is;
     private  OutputStream os;
 
+    protected void htmlFormsGenerator(RequestTypes requestType) throws Exception{
+        StringBuilder response = new StringBuilder();
+        response.append("HTTP/1.0 200 OK\n");
+        response.append("Content-Type: text/html\r\n");
+        response.append("\r\n");
+        response.append("<html><form method='"+requestType.toString()+"'>\n");
+        response.append("<input type='text' name='a'></br><input type='text' name='b'></br><input type='submit' ></form></html>");
+        os.write(response.toString().getBytes());
+        os.close();
+
+    }
+
     public static void main(String args[])
     {
-             try
+        try
         {
 
             ServerSocket server = new ServerSocket(8080);
@@ -50,8 +63,8 @@ class SimpleWEBServerReflection extends Thread
     {
         try
         {
-             is = s.getInputStream();
-             os = s.getOutputStream();
+            is = s.getInputStream();
+            os = s.getOutputStream();
 
             byte buf[] = new byte[64*1024];
             int r = is.read(buf);
@@ -63,6 +76,7 @@ class SimpleWEBServerReflection extends Thread
 
             if(path == null)
             {
+                System.err.println("Path is null");
                 String response = "HTTP/1.1 400 Bad Request\n";
                 DateFormat df = DateFormat.getTimeInstance();
                 df.setTimeZone(TimeZone.getTimeZone("GMT"));
@@ -78,11 +92,12 @@ class SimpleWEBServerReflection extends Thread
                 return;
             }
 
-            r = path.lastIndexOf(".");
-            if(path.substring(r + 1).equals("getpage")) {
-                showClassPage(path.substring(2, r));
+            if(path.contains(":")) {
+                if(path.substring(path.indexOf("\\") + 1, path.indexOf(":")).equals("class"));
+                showClassPage(path.substring(path.indexOf(":") + 1));
                 return;
             }
+
 
             File f = new File(path);
             boolean flag = !f.exists();
@@ -210,18 +225,21 @@ class SimpleWEBServerReflection extends Thread
         return path;
     }
 
-    protected void showClassPage(String className) throws Exception {
+    protected void showClassPage(String invocPath) throws Exception {
 
-        String outMessage = null, response = null;
+        String outMessage = null, response = null, className, methodName;
         try {
-        Class temp = Class.forName("javacorecourse.task_18." + className);
+            className = invocPath.substring(0, invocPath.indexOf("."));
+            methodName = invocPath.substring(invocPath.indexOf(".") + 1);
 
-            Method method = temp.getMethod("getPage");
+            Class temp = Class.forName("javacorecourse.task_18." + className);
+
+            Method method = temp.getMethod(methodName);
             outMessage = (String)method.invoke(new CurrentTime());
             response = "HTTP/1.1 200 OK\n";
         }
         catch (Exception e) {
-            outMessage = "Class" + className +" you are trying to load, does not exists";
+            outMessage = "Class: " + invocPath +" you are trying to load, does not exists";
             System.err.println("Some issues while method invocation has been occurred");
             response = "HTTP/1.1 404 Not Found\n";
         }
@@ -248,4 +266,5 @@ class SimpleWEBServerReflection extends Thread
         if(e < 0) e = str.length();
         return (str.substring(s, e)).trim();
     }
+
 }

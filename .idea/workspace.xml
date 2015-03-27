@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="950d2b13-5402-4d61-b7c1-538fca40f500" name="Default" comment="Hello world commit!">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/javacorecourse/task_19/Adder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/javacorecourse/task_19/RequestTypes.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/javacorecourse/task_19/TwoIntParameters.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaCoreCourse/javacorecourse/task_19/SimpleWEBServerAnnotation.class" afterPath="$PROJECT_DIR$/out/production/JavaCoreCourse/javacorecourse/task_19/SimpleWEBServerAnnotation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaCoreCourse/javacorecourse/task_18/SimpleWEBServerReflection.class" afterPath="$PROJECT_DIR$/out/production/JavaCoreCourse/javacorecourse/task_18/SimpleWEBServerReflection.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/javacorecourse/task_18/CurrentTime.java" afterPath="$PROJECT_DIR$/src/javacorecourse/task_18/CurrentTime.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaCoreCourse.iml" afterPath="$PROJECT_DIR$/JavaCoreCourse.iml" />
+    <list default="true" id="950d2b13-5402-4d61-b7c1-538fca40f500" name="Default" comment="Changed 18 and 19 tasks : now if you want to download a class, you will have to use&#10;class:className.methodName">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaCoreCourse/javacorecourse/task_18/CurrentTime.class" afterPath="$PROJECT_DIR$/out/production/JavaCoreCourse/javacorecourse/task_18/CurrentTime.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/javacorecourse/task_19/SimpleWEBServerAnnotation.java" afterPath="$PROJECT_DIR$/src/javacorecourse/task_19/SimpleWEBServerAnnotation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/javacorecourse/task_18/SimpleWEBServerReflection.java" afterPath="$PROJECT_DIR$/src/javacorecourse/task_18/SimpleWEBServerReflection.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="22be20b1-29b7-401d-beee-04c91a3dab13" name="Rejected commit: Default" comment="Test commit" />
@@ -43,11 +36,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SimpleWEBServerAnnotation.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SimpleWEBServerAnnotation.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_19/SimpleWEBServerAnnotation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4726">
-              <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="270" selection-end-column="0" />
+            <state vertical-scroll-proportion="2.3726995" vertical-offset="510" max-vertical-offset="5593">
+              <caret line="121" column="20" selection-start-line="121" selection-start-column="20" selection-end-line="121" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -70,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimpleWEBServerReflection.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SimpleWEBServerReflection.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_18/SimpleWEBServerReflection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.55674845" vertical-offset="4023" max-vertical-offset="4675">
-              <caret line="258" column="5" selection-start-line="258" selection-start-column="5" selection-end-line="258" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3564" max-vertical-offset="4675">
+              <caret line="222" column="9" selection-start-line="222" selection-start-column="9" selection-end-line="222" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -144,8 +137,8 @@
         <option value="$PROJECT_DIR$/src/javacorecourse/task_19/Adder.java" />
         <option value="$PROJECT_DIR$/src/javacorecourse/task_18/CurrentTime.java" />
         <option value="$PROJECT_DIR$/src/javacorecourse/task_19/RequestTypes.java" />
-        <option value="$PROJECT_DIR$/src/javacorecourse/task_19/SimpleWEBServerAnnotation.java" />
         <option value="$PROJECT_DIR$/src/javacorecourse/task_18/SimpleWEBServerReflection.java" />
+        <option value="$PROJECT_DIR$/src/javacorecourse/task_19/SimpleWEBServerAnnotation.java" />
       </list>
     </option>
   </component>
@@ -284,7 +277,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="options.lastSelected" value="preferences.pluginManager" />
+    <property name="options.lastSelected" value="preferences.keymap" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="OverrideImplement.combined" value="true" />
@@ -305,7 +298,7 @@
       <recent name="javacorecourse.task_19" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SimpleWEBServerReflection">
+  <component name="RunManager" selected="Application.SimpleWEBServerAnnotation">
     <configuration default="false" name="SimpleWEBServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -668,8 +661,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.SimpleWEBServerReflection" />
-        <item index="1" class="java.lang.String" itemvalue="Application.SimpleWEBServerAnnotation" />
+        <item index="0" class="java.lang.String" itemvalue="Application.SimpleWEBServerAnnotation" />
+        <item index="1" class="java.lang.String" itemvalue="Application.SimpleWEBServerReflection" />
         <item index="2" class="java.lang.String" itemvalue="Application.CurrentTime" />
         <item index="3" class="java.lang.String" itemvalue="Application.Parallel_matrix_multiplication" />
         <item index="4" class="java.lang.String" itemvalue="Application.SimpleWEBServer" />
@@ -734,7 +727,7 @@
       <workItem from="1427301416725" duration="18000" />
       <workItem from="1427301722368" duration="676000" />
       <workItem from="1427430241882" duration="89000" />
-      <workItem from="1427440367911" duration="9955000" />
+      <workItem from="1427440367911" duration="16809000" />
     </task>
     <task id="LOCAL-00001" summary="Test commit">
       <created>1427302231043</created>
@@ -748,11 +741,17 @@
       <option name="project" value="LOCAL" />
       <updated>1427302316756</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Changed 18 and 19 tasks : now if you want to download a class, you will have to use&#10;class:className.methodName">
+      <created>1427461702650</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1427461702650</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206297000" />
+    <option name="totallyTimeSpent" value="213151000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -792,9 +791,10 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34054834" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31593794" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23550725" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23550725" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756132" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2599278" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -804,7 +804,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756132" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -853,7 +852,8 @@
     </option>
     <MESSAGE value="Test commit" />
     <MESSAGE value="Hello world commit!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hello world commit!" />
+    <MESSAGE value="Changed 18 and 19 tasks : now if you want to download a class, you will have to use&#10;class:className.methodName" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed 18 and 19 tasks : now if you want to download a class, you will have to use&#10;class:className.methodName" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1194,17 +1194,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_19/Adder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="e#267#268#0" expanded="true" />
-            <element signature="e#311#312#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.11.jar!/org/junit/Test.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2390625" vertical-offset="0" max-vertical-offset="640">
@@ -1234,20 +1223,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_19/SimpleWEBServerAnnotation.java">
+    <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_18/SimpleWEBServerReflection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4726">
-          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="270" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3564" max-vertical-offset="4675">
+          <caret line="222" column="9" selection-start-line="222" selection-start-column="9" selection-end-line="222" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_18/SimpleWEBServerReflection.java">
+    <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_19/Adder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55674845" vertical-offset="4023" max-vertical-offset="4675">
-          <caret line="258" column="5" selection-start-line="258" selection-start-column="5" selection-end-line="258" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#267#268#0" expanded="true" />
+            <element signature="e#311#312#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_19/SimpleWEBServerAnnotation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.3726995" vertical-offset="510" max-vertical-offset="5593">
+          <caret line="121" column="20" selection-start-line="121" selection-start-column="20" selection-end-line="121" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

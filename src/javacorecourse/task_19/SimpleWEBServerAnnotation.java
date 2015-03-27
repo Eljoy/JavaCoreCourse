@@ -16,6 +16,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.TimeZone;
 
 class SimpleWEBServerAnnotation extends Thread
@@ -23,7 +25,7 @@ class SimpleWEBServerAnnotation extends Thread
     private Socket s;
     private   InputStream is;
     private  OutputStream os;
-
+    private static boolean flag2 = true;
     protected void htmlFormsGenerator(RequestTypes requestType) throws Exception{
         StringBuilder response = new StringBuilder();
         response.append("HTTP/1.0 200 OK\n");
@@ -32,8 +34,24 @@ class SimpleWEBServerAnnotation extends Thread
         response.append("<html><form method='"+requestType.toString()+"'>\n");
         response.append("<input type='text' name='a'></br><input type='text' name='b'></br><input type='submit' ></form></html>");
         os.write(response.toString().getBytes());
+        os.flush();
         os.close();
 
+    }
+
+    protected Map<String, String> parseGET(String url) {
+        Map<String, String> parseResult = new HashMap<>();
+        String[] tempBuf;
+
+        url  = url.substring(url.indexOf("?") + 1, (url.indexOf("HTTP") - 1));
+        if(!url.contains("=")) return null;
+        tempBuf = url.split("&");
+
+        for (String s : tempBuf) {
+            parseResult.put(s.split("=")[0], s.split(("="))[1]);
+        }
+
+        return parseResult;
     }
 
     public static void main(String args[])
@@ -71,10 +89,44 @@ class SimpleWEBServerAnnotation extends Thread
             byte buf[] = new byte[64*1024];
             int r = is.read(buf);
 
+            Map<String, String> localMap = new HashMap<>();
 
             String request = new String(buf, 0, r);
 
+
+            if(request.contains("GET")) {
+                localMap = parseGET(request);
+                System.out.println(localMap);
+            }
+            if(flag2) {
+
+                htmlFormsGenerator(RequestTypes.GET);
+                parseGET(request);
+                flag2 = false;
+                return;
+            }
+
+            else {
+                String response = "HTTP/1.1 \n";
+                DateFormat df = DateFormat.getTimeInstance();
+                df.setTimeZone(TimeZone.getTimeZone("GMT"));
+                response = response + "Date: " + df.format(new Date()) + "\n";
+
+                response = response
+                        + "Content-Type: text/plain\n"
+                        + "Connection: close\n"
+                        + "Server: SimpleWEBServer\n"
+                        + "Pragma: no-cache\n\n";
+
+                response = response +  localMap.get("a") + localMap.get("b");
+
+                os.write(response.getBytes());
+                s.close();
+               if(5 > 2) return;
+            }
+
             String path = getPath(request);
+
 
             if(path == null)
             {
@@ -268,6 +320,8 @@ class SimpleWEBServerAnnotation extends Thread
         if(e < 0) e = str.length();
         return (str.substring(s, e)).trim();
     }
+
+
 
 
 }

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="950d2b13-5402-4d61-b7c1-538fca40f500" name="Default" comment="Changed 18 and 19 tasks">
-      <change type="MODIFICATION" beforePath="C:\JavaCoreCourse\out\production\JavaCoreCourse\javacorecourse\task_19\SimpleWEBServerAnnotation.class" afterPath="C:\JavaCoreCourse\out\production\JavaCoreCourse\javacorecourse\task_19\SimpleWEBServerAnnotation.class" />
+    <list default="true" id="950d2b13-5402-4d61-b7c1-538fca40f500" name="Default" comment=" task 19: added ability to load non-static methods">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/javacorecourse/task_19/CurrentTime.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaCoreCourse/javacorecourse/task_18/CurrentTime.class" afterPath="$PROJECT_DIR$/out/production/JavaCoreCourse/javacorecourse/task_18/CurrentTime.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaCoreCourse/javacorecourse/task_19/SimpleWEBServerAnnotation.class" afterPath="$PROJECT_DIR$/out/production/JavaCoreCourse/javacorecourse/task_19/SimpleWEBServerAnnotation.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/javacorecourse/task_19/Adder.java" afterPath="$PROJECT_DIR$/src/javacorecourse/task_19/Adder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/javacorecourse/task_18/CurrentTime.java" afterPath="$PROJECT_DIR$/src/javacorecourse/task_18/CurrentTime.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/javacorecourse/task_19/SimpleWEBServerAnnotation.java" afterPath="$PROJECT_DIR$/src/javacorecourse/task_19/SimpleWEBServerAnnotation.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -41,8 +42,8 @@
       <file leaf-file-name="SimpleWEBServerAnnotation.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_19/SimpleWEBServerAnnotation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45192307" vertical-offset="1036" max-vertical-offset="5848">
-              <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+            <state vertical-scroll-proportion="1.8149039" vertical-offset="401" max-vertical-offset="6137">
+              <caret line="68" column="90" selection-start-line="68" selection-start-column="90" selection-end-line="68" selection-end-column="90" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,8 +54,20 @@
       <file leaf-file-name="Adder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_19/Adder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="527">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
+              <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+              <folding>
+                <element signature="e#306#307#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CurrentTime.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_19/CurrentTime.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+              <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -132,15 +145,15 @@
       <list>
         <option value="$PROJECT_DIR$/src/javacorecourse/task_17/SimpleWEBServer.java" />
         <option value="$PROJECT_DIR$/src/javacorecourse/task_18/SimpleWEBServer.java" />
-        <option value="$PROJECT_DIR$/src/javacorecourse/task_19/CurrentTime.java" />
         <option value="$PROJECT_DIR$/Readme.txt" />
         <option value="$PROJECT_DIR$/src/javacorecourse/task_19/SimpleWEBServerReflection.java" />
         <option value="$PROJECT_DIR$/src/javacorecourse/task_19/TwoIntParameters.java" />
         <option value="$PROJECT_DIR$/src/javacorecourse/task_19/RequestTypes.java" />
         <option value="$PROJECT_DIR$/src/javacorecourse/task_18/SimpleWEBServerReflection.java" />
         <option value="$PROJECT_DIR$/src/javacorecourse/task_18/CurrentTime.java" />
-        <option value="$PROJECT_DIR$/src/javacorecourse/task_19/Adder.java" />
+        <option value="$PROJECT_DIR$/src/javacorecourse/task_19/CurrentTime.java" />
         <option value="$PROJECT_DIR$/src/javacorecourse/task_19/SimpleWEBServerAnnotation.java" />
+        <option value="$PROJECT_DIR$/src/javacorecourse/task_19/Adder.java" />
       </list>
     </option>
   </component>
@@ -292,7 +305,7 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="dynamic.classpath" value="false" />
@@ -752,7 +765,7 @@
       <workItem from="1427301722368" duration="676000" />
       <workItem from="1427430241882" duration="89000" />
       <workItem from="1427440367911" duration="16926000" />
-      <workItem from="1427518774631" duration="8809000" />
+      <workItem from="1427518774631" duration="15039000" />
     </task>
     <task id="LOCAL-00001" summary="Test commit">
       <created>1427302231043</created>
@@ -778,11 +791,17 @@
       <option name="project" value="LOCAL" />
       <updated>1427473630266</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary=" task 19: added ability to load non-static methods">
+      <created>1427532062209</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1427532062209</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222077000" />
+    <option name="totallyTimeSpent" value="228307000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -810,7 +829,7 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32863188" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756132" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21645021" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -825,7 +844,8 @@
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23550725" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2599278" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756132" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25905797" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -834,7 +854,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756132" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -885,7 +904,8 @@
     <MESSAGE value="Hello world commit!" />
     <MESSAGE value="Changed 18 and 19 tasks : now if you want to download a class, you will have to use&#10;class:className.methodName" />
     <MESSAGE value="Changed 18 and 19 tasks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed 18 and 19 tasks" />
+    <MESSAGE value=" task 19: added ability to load non-static methods" />
+    <option name="LAST_COMMIT_MESSAGE" value=" task 19: added ability to load non-static methods" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -899,13 +919,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_9/Collections_task.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="84" max-vertical-offset="765">
-          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/javacorecourse/JavaCoreCourse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="782">
@@ -1256,18 +1269,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_19/CurrentTime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_19/Adder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="527">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
+          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+          <folding>
+            <element signature="e#306#307#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_19/SimpleWEBServerAnnotation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45192307" vertical-offset="1036" max-vertical-offset="5848">
-          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+        <state vertical-scroll-proportion="1.8149039" vertical-offset="401" max-vertical-offset="6137">
+          <caret line="68" column="90" selection-start-line="68" selection-start-column="90" selection-end-line="68" selection-end-column="90" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -8,18 +8,14 @@ public class Adder {
 
     private int a, b;
 
-    public Adder() {
-    }
-
     @TwoIntParameters()
-    public Adder(int a, int b) {
+    public Adder(Integer a, Integer b) {
         this.a = a;
         this.b = b;
     }
 
 
     public String toString() {
-      //  return String.valueOf(a + b);
-        return "55";
+        return String.valueOf(a + b);
     }
 }

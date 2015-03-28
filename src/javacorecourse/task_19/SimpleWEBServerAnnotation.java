@@ -25,7 +25,9 @@ class SimpleWEBServerAnnotation extends Thread
     private   InputStream is;
     private  OutputStream os;
     private static boolean globalFlag = false;
+
     protected void htmlFormsGenerator(RequestTypes requestType) throws Exception{
+
         StringBuilder response = new StringBuilder();
         response.append("HTTP/1.0 200 OK\n");
         response.append("Content-Type: text/html\r\n");
@@ -35,6 +37,7 @@ class SimpleWEBServerAnnotation extends Thread
         os.write(response.toString().getBytes());
         os.flush();
         os.close();
+        globalFlag = true;
 
     }
 
@@ -53,6 +56,34 @@ class SimpleWEBServerAnnotation extends Thread
         return parseResult;
     }
 
+    protected void showClassWithParametersPage(String invocPath, Map<String, String> parameters) throws Exception{
+        String outMessage = null, response = null, className, methodName;
+        try {
+            className = invocPath.substring(0, invocPath.indexOf("."));
+            methodName = invocPath.substring(invocPath.indexOf(".") + 1);
+
+            Class aClass = Class.forName("javacorecourse.task_19." + className);
+
+            Object[] args = new Object[] {Integer.parseInt(parameters.get("a")), Integer.parseInt(parameters.get("b"))};
+            System.out.println(args.toString());
+            Object iClass = aClass.getConstructor(new Class[]{Integer.class, Integer.class}).newInstance(args);
+            System.out.println("32");
+
+            Method method = aClass.getDeclaredMethod(methodName);
+            outMessage = (String)method.invoke(iClass);
+            writeSimpleResponse(outMessage);
+
+            return;
+        }
+        catch (NoSuchMethodException e) {
+            e.printStackTrace();
+            outMessage = "Class: " + invocPath +", you are trying to load, does not exists";
+            writeSimpleResponse(outMessage);
+            System.err.println("Some issues while method invocation has been occurred");
+        }
+
+    }
+
     protected void showClassPage(String invocPath) throws Exception {
 
         String outMessage = null, response = null, className, methodName;
@@ -61,19 +92,18 @@ class SimpleWEBServerAnnotation extends Thread
             methodName = invocPath.substring(invocPath.indexOf(".") + 1);
 
             Class aClass = Class.forName("javacorecourse.task_19." + className);
+            Constructor[] constructors = aClass.getConstructors();
 
+            for (Constructor constructor : constructors) {
+               if(constructor.isAnnotationPresent(TwoIntParameters.class)) {
+
+                    htmlFormsGenerator(RequestTypes.GET);
+                    return;
+                }
+            }
             Object iClass = aClass.newInstance();
             Method method = aClass.getDeclaredMethod(methodName);
             outMessage = (String)method.invoke(iClass);
-
-            Constructor[] constructors = aClass.getConstructors();
-
-           // for (Constructor constructor : constructors) {
-               //if(!constructor.isAnnotationPresent(TwoIntParameters.class)) {
-               //    htmlFormsGenerator(RequestTypes.GET);
-               //     return;
-              //  }
-           // }
 
             writeSimpleResponse(outMessage);
         }
@@ -124,23 +154,6 @@ class SimpleWEBServerAnnotation extends Thread
 
             String request = new String(buf, 0, r);
 
-/*
-            if(request.contains("GET")) {
-                localMap = parseGET(request);
-            }
-            if(flag2) {
-
-                htmlFormsGenerator(RequestTypes.GET);
-                parseGET(request);
-                flag2 = false;
-                return;
-            }
-
-            else {
-               writeSimpleResponse(String.valueOf(Integer.parseInt(localMap.get("a")) + Integer.parseInt(localMap.get("b"))));
-               if(5 > 2) return;
-            }
-            */
 
             String path = getPath(request);
 
@@ -161,6 +174,13 @@ class SimpleWEBServerAnnotation extends Thread
                 s.close();
 
                 return;
+            }
+
+            if(globalFlag) {
+                localMap = parseGET(request);
+                globalFlag = false;
+                showClassWithParametersPage(path.substring(path.indexOf(":") + 1), localMap);
+
             }
 
             if(path.contains(":")) {

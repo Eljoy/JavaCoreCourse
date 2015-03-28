@@ -5,12 +5,11 @@ package javacorecourse.task_19;
  * Created by Home on 13.03.2015.
  */
 
-import javacorecourse.task_18.CurrentTime;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -25,7 +24,7 @@ class SimpleWEBServerAnnotation extends Thread
     private Socket s;
     private   InputStream is;
     private  OutputStream os;
-    private static boolean flag2 = true;
+    private static boolean globalFlag = false;
     protected void htmlFormsGenerator(RequestTypes requestType) throws Exception{
         StringBuilder response = new StringBuilder();
         response.append("HTTP/1.0 200 OK\n");
@@ -52,6 +51,38 @@ class SimpleWEBServerAnnotation extends Thread
         }
 
         return parseResult;
+    }
+
+    protected void showClassPage(String invocPath) throws Exception {
+
+        String outMessage = null, response = null, className, methodName;
+        try {
+            className = invocPath.substring(0, invocPath.indexOf("."));
+            methodName = invocPath.substring(invocPath.indexOf(".") + 1);
+
+            Class aClass = Class.forName("javacorecourse.task_19." + className);
+
+            Object iClass = aClass.newInstance();
+            Method method = aClass.getDeclaredMethod(methodName);
+            outMessage = (String)method.invoke(iClass);
+
+            Constructor[] constructors = aClass.getConstructors();
+
+           // for (Constructor constructor : constructors) {
+               //if(!constructor.isAnnotationPresent(TwoIntParameters.class)) {
+               //    htmlFormsGenerator(RequestTypes.GET);
+               //     return;
+              //  }
+           // }
+
+            writeSimpleResponse(outMessage);
+        }
+        catch (NoSuchMethodException e) {
+            outMessage = "Class: " + invocPath +", you are trying to load, does not exists";
+            writeSimpleResponse(outMessage);
+            System.err.println("Some issues while method invocation has been occurred");
+        }
+
     }
 
     public static void main(String args[])
@@ -93,10 +124,9 @@ class SimpleWEBServerAnnotation extends Thread
 
             String request = new String(buf, 0, r);
 
-
+/*
             if(request.contains("GET")) {
                 localMap = parseGET(request);
-                System.out.println(localMap);
             }
             if(flag2) {
 
@@ -107,23 +137,10 @@ class SimpleWEBServerAnnotation extends Thread
             }
 
             else {
-                String response = "HTTP/1.1 \n";
-                DateFormat df = DateFormat.getTimeInstance();
-                df.setTimeZone(TimeZone.getTimeZone("GMT"));
-                response = response + "Date: " + df.format(new Date()) + "\n";
-
-                response = response
-                        + "Content-Type: text/plain\n"
-                        + "Connection: close\n"
-                        + "Server: SimpleWEBServer\n"
-                        + "Pragma: no-cache\n\n";
-
-                response = response +  localMap.get("a") + localMap.get("b");
-
-                os.write(response.getBytes());
-                s.close();
+               writeSimpleResponse(String.valueOf(Integer.parseInt(localMap.get("a")) + Integer.parseInt(localMap.get("b"))));
                if(5 > 2) return;
             }
+            */
 
             String path = getPath(request);
 
@@ -279,34 +296,26 @@ class SimpleWEBServerAnnotation extends Thread
         return path;
     }
 
-    protected void showClassPage(String invocPath) throws Exception {
+    protected void writeSimpleResponse(String message) throws Exception{
+        String response = "HTTP/1.1 \n";
+        DateFormat df = DateFormat.getTimeInstance();
+        df.setTimeZone(TimeZone.getTimeZone("GMT"));
+        response = response + "Date: " + df.format(new Date()) + "\n";
 
-        String outMessage = null, response = null, className, methodName;
-        try {
-            className = invocPath.substring(0, invocPath.indexOf("."));
-            methodName = invocPath.substring(invocPath.indexOf(".") + 1);
-
-            Class temp = Class.forName("javacorecourse.task_18." + className);
-
-            Method method = temp.getMethod(methodName);
-            outMessage = (String)method.invoke(new CurrentTime());
-            response = "HTTP/1.1 200 OK\n";
-        }
-        catch (Exception e) {
-            outMessage = "Class: " + invocPath +" you are trying to load, does not exists";
-            System.err.println("Some issues while method invocation has been occurred");
-            response = "HTTP/1.1 404 Not Found\n";
-        }
-
-        response = response + "Content-Length: " + outMessage.length() + "\n";
-        response = response + "Content-Type: text/html\n";
         response = response
+                + "Content-Type: text/plain\n"
                 + "Connection: close\n"
-                + "Server: SimpleWEBServer" +"\r\n\r\n"+ "<p>" + outMessage + "</p>";
+                + "Server: SimpleWEBServer\n"
+                + "Pragma: no-cache\n\n";
+
+        response = response +  message;
+
         os.write(response.getBytes());
-        os.close();
+        s.close();
 
     }
+
+
 
 
     protected String extract(String str, String start, String end)

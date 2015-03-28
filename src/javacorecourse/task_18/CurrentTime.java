@@ -9,10 +9,7 @@ import java.util.Calendar;
  */
 public class CurrentTime {
 
-    public static void main(String[] args) {
 
-        System.out.println(getPage());
-    }
 
     public static String getPage(){
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");

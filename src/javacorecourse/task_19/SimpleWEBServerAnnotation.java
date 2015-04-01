@@ -65,16 +65,27 @@ class SimpleWEBServerAnnotation extends Thread
             methodName = invocPath.substring(invocPath.indexOf(".") + 1);
             Class aClass = Class.forName("javacorecourse.task_19." + className);
 
-            Object[] args = new Object[parameters.size()];
-            int i = 0;
-            for (Map.Entry<String, String> entry : parameters.entrySet()) {
-                args[i++] = Integer.parseInt(entry.getValue());
-            }
+
 
             Object iClass = null;
             Constructor[] constructors = aClass.getConstructors();
             for (Constructor constructor : constructors) {
                 if(constructor.isAnnotationPresent(Parameters.class)) {
+                    int i = 0;
+                    Parameters parAnnotation = (Parameters)constructor.getAnnotation(Parameters.class);
+                    Object[] args = new Object[parAnnotation.count()];
+                    switch (parAnnotation.type()) {
+                      case INT :
+                          for (Map.Entry<String, String> entry : parameters.entrySet()) {
+                              args[i++] = Integer.parseInt(entry.getValue());
+                          }
+                          break;
+                      case STRING :
+                          for (Map.Entry<String, String> entry : parameters.entrySet()) {
+                              args[i++] = entry.getValue();
+                          }
+                          break;
+                    }
                     iClass = constructor.newInstance(args);
                 }
             }

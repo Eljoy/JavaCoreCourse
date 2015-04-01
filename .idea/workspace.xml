@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="950d2b13-5402-4d61-b7c1-538fca40f500" name="Default" comment=" task 19: now it loads toString of Adder class with given throw the root parameters">
-      <change type="MOVED" beforePath="C:\JavaCoreCourse\src\javacorecourse\task_19\TwoIntParameters.java" afterPath="$PROJECT_DIR$/src/javacorecourse/task_19/Parameters.java" />
-      <change type="MODIFICATION" beforePath="C:\JavaCoreCourse\out\production\JavaCoreCourse\javacorecourse\JavaCoreCourse.class" afterPath="C:\JavaCoreCourse\out\production\JavaCoreCourse\javacorecourse\JavaCoreCourse.class" />
-      <change type="MODIFICATION" beforePath="C:\JavaCoreCourse\out\production\JavaCoreCourse\javacorecourse\task_19\SimpleWEBServerAnnotation.class" afterPath="C:\JavaCoreCourse\out\production\JavaCoreCourse\javacorecourse\task_19\SimpleWEBServerAnnotation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/javacorecourse/task_19/Adder.java" afterPath="$PROJECT_DIR$/src/javacorecourse/task_19/Adder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/javacorecourse/task_18/CurrentTime.java" afterPath="$PROJECT_DIR$/src/javacorecourse/task_18/CurrentTime.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/javacorecourse/task_19/CurrentTime.java" afterPath="$PROJECT_DIR$/src/javacorecourse/task_19/CurrentTime.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/javacorecourse/JavaCoreCourse.java" afterPath="$PROJECT_DIR$/src/javacorecourse/JavaCoreCourse.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaCoreCourse/javacorecourse/task_18/CurrentTime.class" afterPath="$PROJECT_DIR$/out/production/JavaCoreCourse/javacorecourse/task_18/CurrentTime.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/javacorecourse/task_19/SimpleWEBServerAnnotation.java" afterPath="$PROJECT_DIR$/src/javacorecourse/task_19/SimpleWEBServerAnnotation.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -45,11 +39,9 @@
       <file leaf-file-name="SimpleWEBServerAnnotation.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_19/SimpleWEBServerAnnotation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.83435583" vertical-offset="765" max-vertical-offset="6324">
-              <caret line="77" column="55" selection-start-line="77" selection-start-column="55" selection-end-line="77" selection-end-column="55" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.2607362" vertical-offset="0" max-vertical-offset="6511">
+              <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -81,7 +73,7 @@
         <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_19/Parameters.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-              <caret line="15" column="56" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
+              <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -153,13 +145,13 @@
         <option value="$PROJECT_DIR$/src/javacorecourse/task_19/SimpleWEBServerReflection.java" />
         <option value="$PROJECT_DIR$/src/javacorecourse/task_19/RequestTypes.java" />
         <option value="$PROJECT_DIR$/src/javacorecourse/task_18/SimpleWEBServerReflection.java" />
-        <option value="$PROJECT_DIR$/src/javacorecourse/task_19/SimpleWEBServerAnnotation.java" />
         <option value="$PROJECT_DIR$/src/javacorecourse/task_19/TwoIntParameters.java" />
         <option value="$PROJECT_DIR$/src/javacorecourse/JavaCoreCourse.java" />
         <option value="$PROJECT_DIR$/src/javacorecourse/task_18/CurrentTime.java" />
         <option value="$PROJECT_DIR$/src/javacorecourse/task_19/CurrentTime.java" />
         <option value="$PROJECT_DIR$/src/javacorecourse/task_19/Parameters.java" />
         <option value="$PROJECT_DIR$/src/javacorecourse/task_19/Adder.java" />
+        <option value="$PROJECT_DIR$/src/javacorecourse/task_19/SimpleWEBServerAnnotation.java" />
       </list>
     </option>
   </component>
@@ -774,7 +766,7 @@
       <workItem from="1427518774631" duration="15117000" />
       <workItem from="1427556478621" duration="2388000" />
       <workItem from="1427602333285" duration="339000" />
-      <workItem from="1427904072746" duration="2090000" />
+      <workItem from="1427904072746" duration="3753000" />
     </task>
     <task id="LOCAL-00001" summary="Test commit">
       <created>1427302231043</created>
@@ -812,11 +804,17 @@
       <option name="project" value="LOCAL" />
       <updated>1427544347274</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary=" task 19: now it loads toString of Adder class with given throw the root parameters">
+      <created>1427906203917</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1427906203917</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="233202000" />
+    <option name="totallyTimeSpent" value="234865000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1264,34 +1262,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_19/CurrentTime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_19/RequestTypes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_18/CurrentTime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
-          <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_19/Parameters.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-          <caret line="15" column="56" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
           <folding />
         </state>
       </provider>
@@ -1307,13 +1281,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_19/CurrentTime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_18/CurrentTime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
+          <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_19/Parameters.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_19/SimpleWEBServerAnnotation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.83435583" vertical-offset="765" max-vertical-offset="6324">
-          <caret line="77" column="55" selection-start-line="77" selection-start-column="55" selection-end-line="77" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.2607362" vertical-offset="0" max-vertical-offset="6511">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>

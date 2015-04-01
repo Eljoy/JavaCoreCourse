@@ -9,13 +9,9 @@ import java.util.Calendar;
  */
 public class CurrentTime {
 
-
-
     public static String getPage(){
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Calendar calendar = Calendar.getInstance();
-
-
         return dateFormat.format(calendar.getTime());
     }
 }

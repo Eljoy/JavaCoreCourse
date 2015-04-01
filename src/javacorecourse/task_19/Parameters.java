@@ -10,6 +10,8 @@ import java.lang.annotation.Target;
  */
 @Target(ElementType.CONSTRUCTOR)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface TwoIntParameters {
-
+public @interface Parameters {
+    int count() default 1;
+    enum parametersTYPE{STRING, INT}
+    parametersTYPE type() default parametersTYPE.STRING;
 }

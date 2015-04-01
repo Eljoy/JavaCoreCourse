@@ -26,14 +26,16 @@ class SimpleWEBServerAnnotation extends Thread
     private  OutputStream os;
     private static boolean globalFlag = false;
 
-    protected void htmlFormsGenerator(RequestTypes requestType) throws Exception{
+    protected void htmlFormsGenerator(RequestTypes requestType, int formsCount) throws Exception{
 
         StringBuilder response = new StringBuilder();
         response.append("HTTP/1.0 200 OK\n");
         response.append("Content-Type: text/html\r\n");
         response.append("\r\n");
         response.append("<html><form method='"+requestType.toString()+"'>\n");
-        response.append("<input type='text' name='a'></br><input type='text' name='b'></br><input type='submit' ></form></html>");
+        for(int i = 0; i < formsCount; i++)
+        response.append("<input type='text' name='p" + (i+1) + "') ></br>");
+        response.append("<input type='submit' ></form></html>");
         os.write(response.toString().getBytes());
         os.flush();
         os.close();
@@ -52,7 +54,7 @@ class SimpleWEBServerAnnotation extends Thread
         for (String s : tempBuf) {
             parseResult.put(s.split("=")[0], s.split(("="))[1]);
         }
-
+        System.out.println(parseResult);
         return parseResult;
     }
 
@@ -61,13 +63,22 @@ class SimpleWEBServerAnnotation extends Thread
         try {
             className = invocPath.substring(0, invocPath.indexOf("."));
             methodName = invocPath.substring(invocPath.indexOf(".") + 1);
-
             Class aClass = Class.forName("javacorecourse.task_19." + className);
 
-            Object[] args = new Object[] {Integer.parseInt(parameters.get("a")), Integer.parseInt(parameters.get("b"))};
-            System.out.println(args.toString());
-            Object iClass = aClass.getConstructor(new Class[]{Integer.class, Integer.class}).newInstance(args);
-            System.out.println("32");
+            Object[] args = new Object[parameters.size()];
+            int i = 0;
+            for (Map.Entry<String, String> entry : parameters.entrySet()) {
+                args[i++] = Integer.parseInt(entry.getValue());
+            }
+
+            Object iClass = null;
+            Constructor[] constructors = aClass.getConstructors();
+            for (Constructor constructor : constructors) {
+                if(constructor.isAnnotationPresent(Parameters.class)) {
+                    iClass = constructor.newInstance(args);
+                }
+            }
+
 
             Method method = aClass.getDeclaredMethod(methodName);
             outMessage = (String)method.invoke(iClass);
@@ -77,7 +88,7 @@ class SimpleWEBServerAnnotation extends Thread
         }
         catch (NoSuchMethodException e) {
             e.printStackTrace();
-            outMessage = "Class: " + invocPath +", you are trying to load, does not exists";
+            outMessage = "Class: " + invocPath + ", you are trying to load, does not exists";
             writeSimpleResponse(outMessage);
             System.err.println("Some issues while method invocation has been occurred");
         }
@@ -95,9 +106,9 @@ class SimpleWEBServerAnnotation extends Thread
             Constructor[] constructors = aClass.getConstructors();
 
             for (Constructor constructor : constructors) {
-               if(constructor.isAnnotationPresent(TwoIntParameters.class)) {
+               if(constructor.isAnnotationPresent(Parameters.class)) {
 
-                    htmlFormsGenerator(RequestTypes.GET);
+                    htmlFormsGenerator(RequestTypes.GET, constructor.getParameterCount());
                     return;
                 }
             }

@@ -10,7 +10,8 @@ package javacorecourse;
  * @author Home
  */
 
-import javacorecourse.task_8.stack;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class JavaCoreCourse {
 
@@ -19,7 +20,18 @@ public class JavaCoreCourse {
      */
 
     public static void main(String[] args) {
-        System.out.println((int)(10000000/Math.log(10000000)));
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(7);
+        list.add(2);
+        list.add(1);
+
+        System.out.println(list);
+
+        Collections.reverse(list);
+
+        System.out.println(list);
+
     }
     
 }

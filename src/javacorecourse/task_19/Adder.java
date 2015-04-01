@@ -8,7 +8,7 @@ public class Adder {
 
     private int a, b;
 
-    @TwoIntParameters()
+    @Parameters(count = 2, type = Parameters.parametersTYPE.INT)
     public Adder(Integer a, Integer b) {
         this.a = a;
         this.b = b;

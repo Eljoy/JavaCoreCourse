@@ -36,11 +36,12 @@ class SimpleWEBServerAnnotation extends Thread
         for(int i = 0; i < formsCount; i++)
         response.append("<input type='text' name='p" + (i+1) + "') ></br>");
         response.append("<input type='submit' ></form></html>");
-        os.write(response.toString().getBytes());
-        os.flush();
-        os.close();
-        globalFlag = true;
-
+        if(!s.isClosed()) {
+            os.write(response.toString().getBytes());
+            os.flush();
+            os.close();
+            globalFlag = true;
+        }
     }
 
     protected Map<String, String> parseGET(String url) {
@@ -95,7 +96,7 @@ class SimpleWEBServerAnnotation extends Thread
             outMessage = (String)method.invoke(iClass);
             writeSimpleResponse(outMessage);
 
-            return;
+          //  return;
         }
         catch (NoSuchMethodException e) {
             e.printStackTrace();

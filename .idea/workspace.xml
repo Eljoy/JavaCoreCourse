@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="950d2b13-5402-4d61-b7c1-538fca40f500" name="Default" comment=" task 19: little changes">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/Task_19_Test.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaCoreCourse/javacorecourse/JavaCoreCourse.class" afterPath="$PROJECT_DIR$/out/production/JavaCoreCourse/javacorecourse/JavaCoreCourse.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaCoreCourse/javacorecourse/task_17/MyWebServer$1.class" afterPath="$PROJECT_DIR$/out/production/JavaCoreCourse/javacorecourse/task_17/MyWebServer$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaCoreCourse/javacorecourse/task_17/MyWebServer$SocketProcessor.class" afterPath="$PROJECT_DIR$/out/production/JavaCoreCourse/javacorecourse/task_17/MyWebServer$SocketProcessor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaCoreCourse/javacorecourse/task_17/MyWebServer.class" afterPath="$PROJECT_DIR$/out/production/JavaCoreCourse/javacorecourse/task_17/MyWebServer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaCoreCourse/javacorecourse/task_14/Parallel_matrix_multiplication$Matrix_Multiplication.class" afterPath="$PROJECT_DIR$/out/production/JavaCoreCourse/javacorecourse/task_14/Parallel_matrix_multiplication$Matrix_Multiplication.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaCoreCourse/javacorecourse/task_19/SimpleWEBServerAnnotation.class" afterPath="$PROJECT_DIR$/out/production/JavaCoreCourse/javacorecourse/task_19/SimpleWEBServerAnnotation.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/javacorecourse/task_19/SimpleWEBServerAnnotation.java" afterPath="$PROJECT_DIR$/src/javacorecourse/task_19/SimpleWEBServerAnnotation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="22be20b1-29b7-401d-beee-04c91a3dab13" name="Rejected commit: Default" comment="Test commit" />
@@ -36,14 +42,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SimpleWEBServerAnnotation.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SimpleWEBServerAnnotation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_19/SimpleWEBServerAnnotation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2586399" vertical-offset="3321" max-vertical-offset="6528">
-              <caret line="209" column="16" selection-start-line="209" selection-start-column="16" selection-end-line="209" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="6528">
+              <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Task_19_Test.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Task_19_Test.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.1516165" vertical-offset="0" max-vertical-offset="897">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -162,6 +178,8 @@
         <option value="$PROJECT_DIR$/src/javacorecourse/task_19/Parameters.java" />
         <option value="$PROJECT_DIR$/src/javacorecourse/task_19/Adder.java" />
         <option value="$PROJECT_DIR$/src/javacorecourse/task_19/SimpleWEBServerAnnotation.java" />
+        <option value="$PROJECT_DIR$/src/test/java/test.java" />
+        <option value="$PROJECT_DIR$/src/test/java/Task_19_Test.java" />
       </list>
     </option>
   </component>
@@ -253,7 +271,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="javacorecourse" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -271,11 +289,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="javacorecourse" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="task_19" />
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -322,7 +340,7 @@
       <recent name="javacorecourse.task_19" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SimpleWEBServerAnnotation">
+  <component name="RunManager" selected="JUnit.test.java in JavaCoreCourse">
     <configuration default="false" name="Parallel_matrix_multiplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -676,12 +694,39 @@
       <envs />
       <method />
     </configuration>
-    <list size="5">
+    <configuration default="false" name="test.java in JavaCoreCourse" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="test.java.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="JavaCoreCourse" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="test.java" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Application.Parallel_matrix_multiplication" />
       <item index="1" class="java.lang.String" itemvalue="Application.SimpleWEBServerReflection" />
       <item index="2" class="java.lang.String" itemvalue="Application.CurrentTime" />
       <item index="3" class="java.lang.String" itemvalue="Application.SimpleWEBServerAnnotation" />
       <item index="4" class="java.lang.String" itemvalue="Application.JavaCoreCourse" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.test.java in JavaCoreCourse" />
     </list>
     <recent_temporary>
       <list size="5">
@@ -756,7 +801,7 @@
       <workItem from="1427556478621" duration="2388000" />
       <workItem from="1427602333285" duration="339000" />
       <workItem from="1427904072746" duration="3753000" />
-      <workItem from="1427970844995" duration="617000" />
+      <workItem from="1427970844995" duration="1606000" />
     </task>
     <task id="LOCAL-00001" summary="Test commit">
       <created>1427302231043</created>
@@ -800,11 +845,17 @@
       <option name="project" value="LOCAL" />
       <updated>1427906203917</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary=" task 19: little changes">
+      <created>1427971471145</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1427971471145</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="235482000" />
+    <option name="totallyTimeSpent" value="236471000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -924,14 +975,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1343">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/javacorecourse/JavaCoreCourse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="782">
@@ -1170,13 +1213,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_17/URLExample.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18562874" vertical-offset="80" max-vertical-offset="748">
@@ -1305,13 +1341,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05685619" vertical-offset="0" max-vertical-offset="897">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_19/SimpleWEBServerAnnotation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2586399" vertical-offset="3321" max-vertical-offset="6528">
-          <caret line="209" column="16" selection-start-line="209" selection-start-column="16" selection-end-line="209" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="6528">
+          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Task_19_Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1516165" vertical-offset="0" max-vertical-offset="897">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

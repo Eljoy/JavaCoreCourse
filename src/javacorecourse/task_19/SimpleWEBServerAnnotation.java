@@ -207,7 +207,7 @@ class SimpleWEBServerAnnotation extends Thread
             }
 
             if(path.contains(":")) {
-                if(path.substring(path.indexOf("\\") + 1, path.indexOf(":")).equals("class"));
+                 if(path.substring(path.indexOf("\\") + 1, path.indexOf(":")).equals("class"));
                 showClassPage(path.substring(path.indexOf(":") + 1));
                 return;
             }

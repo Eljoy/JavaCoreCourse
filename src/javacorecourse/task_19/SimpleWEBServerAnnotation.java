@@ -43,30 +43,14 @@ class SimpleWEBServerAnnotation extends Thread
         }
     }
 
-    protected Map<String, String> parseGET(String url) {
-        Map<String, String> parseResult = new HashMap<>();
-        String[] tempBuf;
 
-        url  = url.substring(url.indexOf("?") + 1, (url.indexOf("HTTP") - 1));
-        if(!url.contains("=")) return null;
-        tempBuf = url.split("&");
-
-        for (String s : tempBuf) {
-            parseResult.put(s.split("=")[0], s.split(("="))[1]);
-        }
-        System.out.println(parseResult);
-        return parseResult;
-    }
 
     protected void showClassWithParametersPage(String invocPath, Map<String, String> parameters) throws Exception{
-        String outMessage = null, response = null, className, methodName;
+        String outMessage = null, className, methodName;
         try {
             className = invocPath.substring(0, invocPath.indexOf("."));
             methodName = invocPath.substring(invocPath.indexOf(".") + 1);
             Class aClass = Class.forName("javacorecourse.task_19." + className);
-
-
-
             Object iClass = null;
             Constructor[] constructors = aClass.getConstructors();
             for (Constructor constructor : constructors) {
@@ -86,12 +70,9 @@ class SimpleWEBServerAnnotation extends Thread
                     iClass = constructor.newInstance(args);
                 }
             }
-
             Method method = aClass.getDeclaredMethod(methodName);
             outMessage = (String)method.invoke(iClass);
             writeSimpleResponse(outMessage);
-
-          //  return;
         }
         catch (NoSuchMethodException e) {
             e.printStackTrace();
@@ -137,10 +118,8 @@ class SimpleWEBServerAnnotation extends Thread
     {
         try
         {
-
             ServerSocket server = new ServerSocket(8080);
             System.out.println("server has started");
-
             while(true)
             {
                 new SimpleWEBServerAnnotation(server.accept());
@@ -167,14 +146,9 @@ class SimpleWEBServerAnnotation extends Thread
 
             byte buf[] = new byte[64*1024];
             int r = is.read(buf);
-
             Map<String, String> localMap = new HashMap<>();
-
             String request = new String(buf, 0, r);
-
-
-            String path = getPath(request);
-
+            String path = WebServerParser.getPath(request);
 
             if(path == null)
             {
@@ -195,7 +169,7 @@ class SimpleWEBServerAnnotation extends Thread
             }
 
             if(globalFlag) {
-                localMap = parseGET(request);
+                localMap = WebServerParser.parseGET(request);
                 globalFlag = false;
                 showClassWithParametersPage(path.substring(path.indexOf(":") + 1), localMap);
 
@@ -206,7 +180,6 @@ class SimpleWEBServerAnnotation extends Thread
                 showClassPage(path.substring(path.indexOf(":") + 1));
                 return;
             }
-
 
             File f = new File(path);
             boolean flag = !f.exists();
@@ -219,12 +192,8 @@ class SimpleWEBServerAnnotation extends Thread
                 f = new File(path);
                 flag = !f.exists();
             }
-
-
-
             if(flag)
             {
-
                 String response = "HTTP/1.1 404 Not Found\n";
 
                 DateFormat df = DateFormat.getTimeInstance();
@@ -238,7 +207,6 @@ class SimpleWEBServerAnnotation extends Thread
                         + "Pragma: no-cache\n\n";
 
                 response = response + "File " + path + " not found!";
-
                 os.write(response.getBytes());
                 s.close();
 
@@ -298,41 +266,7 @@ class SimpleWEBServerAnnotation extends Thread
     }
 
 
-    protected String getPath(String header)
-    {
 
-        String URI = extract(header, "GET ", " "), path;
-        if(URI == null) URI = extract(header, "POST ", " ");
-        if(URI == null) return null;
-
-        path = URI.toLowerCase();
-        if(path.indexOf("http://", 0) == 0)
-        {
-            URI = URI.substring(7);
-            URI = URI.substring(URI.indexOf("/", 0));
-        }
-        else if(path.indexOf("/", 0) == 0)
-            URI = URI.substring(1);
-
-        int i = URI.indexOf("?");
-        if(i > 0) URI = URI.substring(0, i);
-        i = URI.indexOf("#");
-        if(i > 0) URI = URI.substring(0, i);
-
-
-        path = "." + File.separator;
-        char a;
-        for(i = 0; i < URI.length(); i++)
-        {
-            a = URI.charAt(i);
-            if(a == '/')
-                path = path + File.separator;
-            else
-                path = path + a;
-        }
-
-        return path;
-    }
 
     protected void writeSimpleResponse(String message) throws Exception{
         String response = "HTTP/1.1 \n";
@@ -356,17 +290,7 @@ class SimpleWEBServerAnnotation extends Thread
 
 
 
-    protected String extract(String str, String start, String end)
-    {
-        int s = str.indexOf("\n\n", 0), e;
-        if(s < 0) s = str.indexOf("\r\n\r\n", 0);
-        if(s > 0) str = str.substring(0, s);
-        s = str.indexOf(start, 0)+start.length();
-        if(s < start.length()) return null;
-        e = str.indexOf(end, s);
-        if(e < 0) e = str.length();
-        return (str.substring(s, e)).trim();
-    }
+
 
 
 

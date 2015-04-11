@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
 @Target(ElementType.CONSTRUCTOR)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Parameters {
-    int count() default 1;
-    enum parametersTYPE{STRING, INT}
-    parametersTYPE type() default parametersTYPE.STRING;
+    static enum parType {STRING, INT}
+    parType[] parTypes();
+    String[] parNames();
 }

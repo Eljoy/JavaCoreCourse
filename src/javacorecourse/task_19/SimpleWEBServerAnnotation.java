@@ -26,7 +26,7 @@ class SimpleWEBServerAnnotation extends Thread
     private  OutputStream os;
     private static boolean globalFlag = false;
 
-    protected void htmlFormsGenerator(RequestTypes requestType, int formsCount) throws Exception{
+    protected void htmlFormsGenerator(RequestTypes requestType, int formsCount, String[] parNames) throws Exception{
 
         StringBuilder response = new StringBuilder();
         response.append("HTTP/1.0 200 OK\n");
@@ -34,11 +34,10 @@ class SimpleWEBServerAnnotation extends Thread
         response.append("\r\n");
         response.append("<html><form method='"+requestType.toString()+"'>\n");
         for(int i = 0; i < formsCount; i++)
-        response.append("<input type='text' name='p" + (i+1) + "') ></br>");
+        response.append("<input type='text' name='" + parNames[i] + "') ></br>");
         response.append("<input type='submit' ></form></html>");
         if(!s.isClosed()) {
             os.write(response.toString().getBytes());
-            os.flush();
             os.close();
             globalFlag = true;
         }
@@ -71,26 +70,22 @@ class SimpleWEBServerAnnotation extends Thread
             Object iClass = null;
             Constructor[] constructors = aClass.getConstructors();
             for (Constructor constructor : constructors) {
-                if(constructor.isAnnotationPresent(Parameters.class)) {
-                    int i = 0;
-                    Parameters parAnnotation = (Parameters)constructor.getAnnotation(Parameters.class);
-                    Object[] args = new Object[parAnnotation.count()];
-                    switch (parAnnotation.type()) {
-                      case INT :
-                          for (Map.Entry<String, String> entry : parameters.entrySet()) {
-                              args[i++] = Integer.parseInt(entry.getValue());
-                          }
-                          break;
-                      case STRING :
-                          for (Map.Entry<String, String> entry : parameters.entrySet()) {
-                              args[i++] = entry.getValue();
-                          }
-                          break;
+                if (constructor.isAnnotationPresent(Parameters.class)) {
+                    Parameters parAnnotation = (Parameters) constructor.getAnnotation(Parameters.class);
+                    Object[] args = new Object[parAnnotation.parNames().length];
+                    for (int j = 0; j < parAnnotation.parNames().length; j++) {
+                        switch (parAnnotation.parTypes()[j]) {
+                            case INT:
+                                    args[j] = Integer.parseInt(parameters.get(parAnnotation.parNames()[j]));
+                                break;
+                            case STRING:
+                                    args[j] = parameters.get(parAnnotation.parNames()[j]);
+                                break;
+                        }
                     }
                     iClass = constructor.newInstance(args);
                 }
             }
-
 
             Method method = aClass.getDeclaredMethod(methodName);
             outMessage = (String)method.invoke(iClass);
@@ -119,8 +114,8 @@ class SimpleWEBServerAnnotation extends Thread
 
             for (Constructor constructor : constructors) {
                if(constructor.isAnnotationPresent(Parameters.class)) {
-
-                    htmlFormsGenerator(RequestTypes.GET, constructor.getParameterCount());
+                    Parameters parAnnotation = (Parameters)constructor.getAnnotation(Parameters.class);
+                    htmlFormsGenerator(RequestTypes.GET, parAnnotation.parNames().length, parAnnotation.parNames());
                     return;
                 }
             }
@@ -207,7 +202,7 @@ class SimpleWEBServerAnnotation extends Thread
             }
 
             if(path.contains(":")) {
-                 if(path.substring(path.indexOf("\\") + 1, path.indexOf(":")).equals("class"));
+                if(path.substring(path.indexOf("\\") + 1, path.indexOf(":")).equals("class"));
                 showClassPage(path.substring(path.indexOf(":") + 1));
                 return;
             }

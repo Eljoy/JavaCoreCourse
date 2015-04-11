@@ -7,7 +7,6 @@ import org.junit.Test;
  */
 public class Task_19_Test {
 
-
     @Test
     public void htmlFormsGeneratorTest() {
 

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="950d2b13-5402-4d61-b7c1-538fca40f500" name="Default" comment=" task 19: done">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/javacorecourse/task_19/WebServerParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaCoreCourse/javacorecourse/task_19/SimpleWEBServerAnnotation.class" afterPath="$PROJECT_DIR$/out/production/JavaCoreCourse/javacorecourse/task_19/SimpleWEBServerAnnotation.class" />
+    <list default="true" id="950d2b13-5402-4d61-b7c1-538fca40f500" name="Default" comment=" task 19: reffactoring">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/javacorecourse/task_19/SimpleWEBServerAnnotation.java" afterPath="$PROJECT_DIR$/src/javacorecourse/task_19/SimpleWEBServerAnnotation.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -40,8 +38,8 @@
       <file leaf-file-name="SimpleWEBServerAnnotation.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_19/SimpleWEBServerAnnotation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.1380367" vertical-offset="1190" max-vertical-offset="5151">
-              <caret line="152" column="1" selection-start-line="152" selection-start-column="1" selection-end-line="152" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.39110428" vertical-offset="765" max-vertical-offset="4862">
+              <caret line="60" column="38" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -719,7 +717,7 @@
       <workItem from="1427602333285" duration="339000" />
       <workItem from="1427904072746" duration="3753000" />
       <workItem from="1427970844995" duration="1606000" />
-      <workItem from="1428755812159" duration="5039000" />
+      <workItem from="1428755812159" duration="5353000" />
     </task>
     <task id="LOCAL-00001" summary="Test commit">
       <created>1427302231043</created>
@@ -775,11 +773,17 @@
       <option name="project" value="LOCAL" />
       <updated>1428759686093</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary=" task 19: reffactoring">
+      <created>1428764788453</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1428764788453</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="241510000" />
+    <option name="totallyTimeSpent" value="241824000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -886,7 +890,8 @@
     <MESSAGE value=" task 19: now it loads toString of Adder class with given throw the root parameters" />
     <MESSAGE value=" task 19: little changes" />
     <MESSAGE value=" task 19: done" />
-    <option name="LAST_COMMIT_MESSAGE" value=" task 19: done" />
+    <MESSAGE value=" task 19: reffactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value=" task 19: reffactoring" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1280,8 +1285,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/javacorecourse/task_19/SimpleWEBServerAnnotation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.1380367" vertical-offset="1190" max-vertical-offset="5151">
-          <caret line="152" column="1" selection-start-line="152" selection-start-column="1" selection-end-line="152" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.39110428" vertical-offset="765" max-vertical-offset="4862">
+          <caret line="60" column="38" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

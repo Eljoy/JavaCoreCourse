@@ -1,6 +1,5 @@
 package javacorecourse.task_19;
 
-
 /**
  * Created by Home on 13.03.2015.
  */
@@ -15,19 +14,17 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.text.DateFormat;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.TimeZone;
 
 class SimpleWEBServerAnnotation extends Thread
 {
     private Socket s;
-    private   InputStream is;
+    private  InputStream is;
     private  OutputStream os;
     private static boolean globalFlag = false;
 
     protected void htmlFormsGenerator(RequestTypes requestType, int formsCount, String[] parNames) throws Exception{
-
         StringBuilder response = new StringBuilder();
         response.append("HTTP/1.0 200 OK\n");
         response.append("Content-Type: text/html\r\n");
@@ -46,7 +43,7 @@ class SimpleWEBServerAnnotation extends Thread
 
 
     protected void showClassWithParametersPage(String invocPath, Map<String, String> parameters) throws Exception{
-        String outMessage = null, className, methodName;
+        String outMessage, className, methodName;
         try {
             className = invocPath.substring(0, invocPath.indexOf("."));
             methodName = invocPath.substring(invocPath.indexOf(".") + 1);
@@ -84,8 +81,7 @@ class SimpleWEBServerAnnotation extends Thread
     }
 
     protected void showClassPage(String invocPath) throws Exception {
-
-        String outMessage = null, response = null, className, methodName;
+        String outMessage, className, methodName;
         try {
             className = invocPath.substring(0, invocPath.indexOf("."));
             methodName = invocPath.substring(invocPath.indexOf(".") + 1);
@@ -111,7 +107,6 @@ class SimpleWEBServerAnnotation extends Thread
             writeSimpleResponse(outMessage);
             System.err.println("Some issues while method invocation has been occurred");
         }
-
     }
 
     public static void main(String args[])
@@ -146,7 +141,7 @@ class SimpleWEBServerAnnotation extends Thread
 
             byte buf[] = new byte[64*1024];
             int r = is.read(buf);
-            Map<String, String> localMap = new HashMap<>();
+            Map<String, String> localMap;
             String request = new String(buf, 0, r);
             String path = WebServerParser.getPath(request);
 
@@ -265,9 +260,6 @@ class SimpleWEBServerAnnotation extends Thread
         {e.printStackTrace();}
     }
 
-
-
-
     protected void writeSimpleResponse(String message) throws Exception{
         String response = "HTTP/1.1 \n";
         DateFormat df = DateFormat.getTimeInstance();
@@ -286,13 +278,4 @@ class SimpleWEBServerAnnotation extends Thread
         s.close();
 
     }
-
-
-
-
-
-
-
-
-
 }

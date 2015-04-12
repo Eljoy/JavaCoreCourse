@@ -12,7 +12,6 @@ public class WebServerParser {
     public static Map<String, String> parseGET(String url) {
         Map<String, String> parseResult = new HashMap<>();
         String[] tempBuf;
-
         url  = url.substring(url.indexOf("?") + 1, (url.indexOf("HTTP") - 1));
         if(!url.contains("=")) return null;
         tempBuf = url.split("&");

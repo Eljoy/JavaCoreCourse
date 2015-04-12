@@ -1,5 +1,6 @@
 package test.java;
 
+import javacorecourse.task_19.Adder;
 import javacorecourse.task_19.WebServerParser;
 import org.junit.Assert;
 import org.junit.Test;
@@ -41,5 +42,12 @@ public class Task_19_Test {
         final String expectedPath = ".\\class:Adder.toString";
         Assert.assertEquals(expectedPath, WebServerParser.getPath(REQUEST));
     }
+
+    @Test
+    public void adderTest() {
+        Adder adder = new Adder(5, 6);
+        Assert.assertEquals(adder.toString(), "11");
+    }
+
 
 }

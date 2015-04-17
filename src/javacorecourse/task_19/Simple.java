@@ -10,7 +10,6 @@ public class Simple {
 
     @Parameters(parNames = {"first", "second", "third", "fourth"},
                 parTypes = {parType.STRING, parType.STRING, parType.STRING, parType.STRING})
-
     public Simple(String first, String second, String third, String fourth) {
         this.first = first;
         this.second = second;
@@ -18,7 +17,7 @@ public class Simple {
         this.fourth = fourth;
     }
 
-    public String simpleResponse() {
-        return first + second + third + fourth;
+    public String getResponse() {
+        return first + " " + second+ " " + third + " " + fourth;
     }
 }

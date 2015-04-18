@@ -1,5 +1,7 @@
 package javacorecourse.task_19;
 
+import org.apache.log4j.Logger;
+
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
@@ -8,19 +10,26 @@ import java.util.Map;
  * Created by Home on 4/11/2015.
  */
 public class WebServerParser {
-
+    protected static Logger log = Logger.getLogger(WebServerParser.class);
     public static Map<String, String> parseGET(String url) {
+        log.debug("Attempt to parse url: " + url);
         Map<String, String> parseResult = new HashMap<>();
         String[] tempBuf;
-        url  = url.substring(url.indexOf("?") + 1, (url.indexOf("HTTP") - 1));
-        if(!url.contains("=")) return null;
-        tempBuf = url.split("&");
+        try {
+            url = url.substring(url.indexOf("?") + 1, (url.indexOf("HTTP") - 1));
+            if (!url.contains("=")) return null;
+            tempBuf = url.split("&");
 
-        for (String s : tempBuf) {
-            parseResult.put(s.split("=")[0], s.split(("="))[1]);
+            for (String s : tempBuf) {
+                parseResult.put(s.split("=")[0], s.split(("="))[1]);
+            }
+            log.debug("Parse result: " + parseResult);
+            return parseResult;
         }
-        System.out.println(parseResult);
-        return parseResult;
+        catch (Exception e) {
+                log.error("Exception has occurred, during parsing: " + e.getStackTrace());
+            return null;
+        }
     }
 
     public static String extract(String str, String start, String end)

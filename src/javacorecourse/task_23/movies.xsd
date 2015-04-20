@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!--Elements description-->
+    <xs:element name="genre" type="xs:string"/>
+    <xs:element name="format" type="xs:string"/>
+    <xs:element name="year" type="xs:int"/>
+    <xs:element name="rating" type="xs:string"/>
+    <xs:element name="stars" type="xs:int"/>
+    <xs:element name="description" type="xs:string"/>
+    <xs:element name="awards"  type="awardsType"/>
+    <!--Attributes description-->
+    <xs:attribute name="title" type="xs:string"/>
+    <xs:attribute name="collectionId" type="xs:string"/>
+    <!--Restriction description-->
+    <xs:simpleType name="awardsType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="Golden Globe|Oscar|None"/>
+        </xs:restriction>
+    </xs:simpleType>
+  <!--Daughter element "movie"-->
+    <xs:element name="movie">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="genre"/>
+                <xs:element ref="format"/>
+                <xs:element ref="year"/>
+                <xs:element ref="rating"/>
+                <xs:element ref="stars"/>
+                <xs:element ref="description"/>
+                <xs:element ref="awards"/>
+            </xs:sequence>
+                <xs:attribute ref="title"/>
+        </xs:complexType>
+  </xs:element>
+  <!-- Root element -->
+     <xs:element name="collection">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="movie"/>
+            </xs:sequence>
+                <xs:attribute ref="collectionId"/>
+        </xs:complexType>
+     </xs:element>
+</xs:schema>

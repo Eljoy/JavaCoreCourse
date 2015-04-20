@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<collection collectionId = "1777"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="movies.xsd">
+    <movie title="Enemy Behind">
+        <genre>War, Thriller</genre>
+        <format>DVD</format>
+        <year>2003</year>
+        <rating>PG</rating>
+        <stars>10</stars>
+        <description>Talk about a US-Japan war</description>
+        <awards>None</awards>
+    </movie>
+</collection>

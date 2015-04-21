@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="movies-style.xsl"?>
 <collection collectionId = "1777"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="movies.xsd">
@@ -10,5 +11,14 @@
         <stars>10</stars>
         <description>Talk about a US-Japan war</description>
         <awards>None</awards>
+    </movie>
+    <movie title="Fight Club">
+        <genre>Drama</genre>
+        <format>DVD</format>
+        <year>1999</year>
+        <rating>PG</rating>
+        <stars>10</stars>
+        <description>Fight Club is a 1999 film based on the 1996 novel of the same name by Chuck Palahniuk</description>
+        <awards>Oscar</awards>
     </movie>
 </collection>

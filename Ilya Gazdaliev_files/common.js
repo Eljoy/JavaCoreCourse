@@ -3801,7 +3801,7 @@ function updateOtherCounters(url, referrer) {
   if (vk.zero) return;
   referrer = referrer || document.referrer;
   vkImage().src = locProtocol + '//counter.yadro.ru/hit?r' + escape(referrer) + (window.screen === undefined ? '' : ';s' + screen.width + '*' + screen.height + '*' + (screen.colorDepth ? screen.colorDepth : screen.pixelDepth)) + ';u' + escape(url) + ';' + Math.random() + '';
-  vkImage().src = locProtocol + '//www.tns-counter.ru/V13a***R>' + referrer.replace(/\*/g,'%2a') + '*vk_com/ru/UTF-8/tmsec=vksite_total/' + Math.round(Math.random()*1E9);
+  vkImage().src = locProtocol + '//www.tns-counter.ru/V13a***config.R>' + referrer.replace(/\*/g,'%2a') + '*vk_com/ru/UTF-8/tmsec=vksite_total/' + Math.round(Math.random()*1E9);
   comScoreUDM(url, referrer);
   window._tmr = window._tmr || [];
   window._tmr.push({id: "2579437", url: url, referrer: referrer, type: "pageView", start: (new Date()).getTime()});
@@ -4656,12 +4656,12 @@ function dispatchIntro(step, params) {
 function parseLatin(text){
   var outtext = text;
   var lat1 = ['yo','zh','kh','ts','ch','sch','shch','sh','eh','yu','ya','YO','ZH','KH','TS','CH','SCH','SHCH','SH','EH','YU','YA',"'"];
-  var rus1 = ['¸', 'æ', 'õ', 'ö', '÷', 'ù',  'ù',   'ø', 'ý', 'þ', 'ÿ', '¨', 'Æ', 'Õ', 'Ö', '×', 'Ù',  'Ù',   'Ø', 'Ý', 'Þ', 'ß', 'ü'];
+  var rus1 = ['ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½',  'ï¿½',   'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½',  'ï¿½',   'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½'];
   for (var i = 0, l = lat1.length; i < l; i++) {
     outtext = outtext.split(lat1[i]).join(rus1[i]);
   }
-  var lat2 = 'abvgdezijklmnoprstufhcyABVGDEZIJKLMNOPRSTUFHCY¸¨';
-  var rus2 = 'àáâãäåçèéêëìíîïðñòóôõöûÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖÛåÅ';
+  var lat2 = 'abvgdezijklmnoprstufhcyABVGDEZIJKLMNOPRSTUFHCYï¿½ï¿½';
+  var rus2 = 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
   for (var i = 0, l = lat2.length; i < l; i++) {
     outtext = outtext.split(lat2.charAt(i)).join(rus2.charAt(i));
   }
@@ -4671,9 +4671,9 @@ function parseLatin(text){
 function parseCyr(text) {
   var outtext = text, i,
       lat1 = ['yo','zh','kh','ts','ch','sch','shch','sh','eh','yu','ya','YO','ZH','KH','TS','CH','SCH','SHCH','SH','EH','YU','YA',"'"],
-      rus1 = ['¸', 'æ', 'õ', 'ö', '÷', 'ù',  'ù',   'ø', 'ý', 'þ', 'ÿ', '¨', 'Æ', 'Õ', 'Ö', '×', 'Ù',  'Ù',   'Ø', 'Ý', 'Þ', 'ß', 'ü'],
-      lat2 = 'abvgdezijklmnoprstufhcyABVGDEZIJKLMNOPRSTUFHCY¸¨',
-      rus2 = 'àáâãäåçèéêëìíîïðñòóôõöûÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖÛåÅ';
+      rus1 = ['ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½',  'ï¿½',   'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½',  'ï¿½',   'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½'],
+      lat2 = 'abvgdezijklmnoprstufhcyABVGDEZIJKLMNOPRSTUFHCYï¿½ï¿½',
+      rus2 = 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
   for (i = 0; i < rus1.length; i++) {
     outtext = outtext.split(rus1[i]).join(lat1[i]);
   }
@@ -4686,7 +4686,7 @@ function parseCyr(text) {
 function parseLatKeys(text) {
   var outtext = text, i;
       lat = "qwertyuiop[]asdfghjkl;'zxcvbnm,./`",
-      rus = "éöóêåíãøùçõúôûâàïðîëäæýÿ÷ñìèòüáþ.¸";
+      rus = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.ï¿½";
   for (i = 0; i < lat.length; i++) {
     outtext = outtext.split(lat.charAt(i)).join(rus.charAt(i));
   }

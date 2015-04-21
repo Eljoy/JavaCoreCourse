@@ -19,5 +19,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="log4j-1.2.17" level="project" />
+    <orderEntry type="library" name="apache-log4j-1.2" level="application" />
   </component>
 </module>

@@ -2,7 +2,7 @@
 
     <xsl:template match="/">
         <html>
-            <head></head>
+
             <body>
                 <table border="1" cellpadding="4" cellspacing="0">
                     <tr bgcolor="#999999" align="center">

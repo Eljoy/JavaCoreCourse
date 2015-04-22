@@ -18,7 +18,7 @@
         </xs:restriction>
     </xs:simpleType>
   <!--Daughter element "movie"-->
-    <xs:element name="movie">
+    <xs:element name="movie" >
         <xs:complexType>
             <xs:sequence>
                 <xs:element ref="genre"/>
@@ -36,7 +36,7 @@
      <xs:element name="collection">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="movie"/>
+                <xs:element ref="movie" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
                 <xs:attribute ref="collectionId"/>
         </xs:complexType>

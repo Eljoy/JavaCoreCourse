@@ -51,7 +51,7 @@ public  class XMLOperator {
         Source text = new StreamSource(new File(xmlAddress));
         transformer.transform(text, new StreamResult(new File(resultAddress)));
     }
-//http://www.mkyong.com/java/jaxb-hello-world-example/
+//http://www.mkyong.com/java/jaxb-hello-world-example
     public static void main(String[] args) throws Exception{
         System.out.println(validateAgainstXSD("C:/JavaCoreCourse/src/javacorecourse/task_23/movies.xml", "C:/JavaCoreCourse/src/javacorecourse/task_23/movies.xsd"));
         XMLtoHtmlTransform("C:/JavaCoreCourse/src/javacorecourse/task_23/movies-style.xsl", "C:/JavaCoreCourse/src/javacorecourse/task_23/movies.xml", "C:/JavaCoreCourse/src/javacorecourse/task_23/result.html" );

@@ -33,7 +33,7 @@ class SimpleWEBServerAnnotation extends Thread
         response.append("\r\n");
         response.append("<html><form method='"+requestType.toString()+"'>\n");
         for(int i = 0; i < formsCount; i++)
-        response.append("<input type='text' name='" + parNames[i] + "') ></br>");
+        response.append(parNames[i] + ": <input type='text' name='" + parNames[i] + "') ></br>");
         response.append("<input type='submit' ></form></html>");
         if(!s.isClosed()) {
             os.write(response.toString().getBytes());

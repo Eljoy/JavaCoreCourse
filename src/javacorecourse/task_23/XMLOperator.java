@@ -40,7 +40,6 @@ public  class XMLOperator {
         catch (Exception e){
             return false;
         }
-
         return true;
     }
 
